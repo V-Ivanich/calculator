@@ -14,16 +14,21 @@
 
 }
 button {
-  background: linear-gradient(to right, rgb(110, 139, 158), rgb(247, 190, 199));
-  border: 1px solid rgb(241, 106, 127);
+  background: linear-gradient(to right, rgb(110, 139, 158), rgb(131, 199, 146));
+  border: 1px solid rgb(89, 155, 106);
   border-radius: 4px;
   font-size: 2em;
   color: darkslategray;
+  cursor: pointer;
+}
+button:active {
+  background: linear-gradient(to right, rgb(160, 166, 170), rgb(223, 247, 220));
+  margin-top: 2px;
 }
 .in_put {
   background-color: cadetblue;
   border-radius: 5px;
-  padding-top: 15px;
+  padding-top: 8%;
   font-size: 2em;
   text-align: center;
   grid-row: 1/3;
