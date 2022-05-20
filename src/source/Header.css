@@ -1,0 +1,13 @@
+
+header {
+  background-color: rgb(64, 69, 70);
+  height: 4em;
+  text-align: center;
+}
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(170, 211, 204);
+  letter-spacing: 3px;
+  font-weight: 200;
+  padding-top: 8px;
+}
