@@ -99,7 +99,7 @@ button:active {
   grid-column: 4/5;
 }
 .C {
-  background-color: chocolate;
+  background: linear-gradient(to right, rgb(245, 125, 131), rgb(182, 132, 23));
   grid-row: 3/4;
   grid-column: 4/6;
 }
