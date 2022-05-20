@@ -6,42 +6,59 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      put_in: '',
       def_input: ''
     }
-    this.obrab = this.obrab.bind(this);
     this.btnClick = this.btnClick.bind(this);
   }
 
-  obrab(event){
-    this.setState({put_in: event.target.value})
-  }
 
   btnClick(event){
-    if(event.target.name === 'c'){
-      this.setState({put_in: ''})
+    let number_1 = '',
+      number_2 = '',
+      operacion = '',
+      spaceA = '',
+      action = event.target.name;
+
+    if( action === 'c'){ //! очистка/сброс
       this.setState({def_input: ''})
     }
-    else {
-      if(event.target.name !== '='){
+    else { //! конкотенация символов
+      if(action !== '='){
+        if(action === '-' || action === '+' || action === '/' || action === '*'){
+          spaceA = ' ';
+        } else spaceA = '';
+
       let temp = this.state.def_input;
-      this.setState({def_input: temp + event.target.name})
+      this.setState({def_input: temp + spaceA + action + spaceA})
       } 
-        else {
-          let mas = [];
-          let str = '';
-          if(this.state.put_in === ''){
-            
-            str= this.state.def_input;
-            mas = str.split('');
-          }
-          else {
-            str =this.state.put_in;
-            mas = str.split('');
-          }
+        else { //! нажата кнопка '='
+          let mas = [],
+            str = '',
+            res = 0;
+
+          str= this.state.def_input;
+          mas = str.split(' ');
           console.log(mas);
 
+          number_1 = Number(mas[0])
+          number_2 = Number(mas[2])
+          operacion = mas[1]
+          switch (operacion) {
+            case '-':
+              res = number_1 - number_2;
+              break;
+            case '+':
+              res = number_1 + number_2;
+              break;
+            case '*':
+              res = number_1 * number_2;
+              break;
+            case '/':
+              res = number_1 / number_2;
+              break;
         }
+        this.setState({def_input: res});
+      }
     }
   }
 
